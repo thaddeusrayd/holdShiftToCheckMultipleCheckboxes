@@ -96,6 +96,15 @@
   </div>
 
 <script>
+  const checkboxes = document.querySelectorAll('.inbox input[type = "checkbox"]');
+
+  function checkMultiple(e) {
+    if (e.shiftKey && this.checked) {
+      console.log('shifted');
+    }  
+  }
+
+  checkboxes.forEach(checkbox => checkbox.addEventListener('click', checkMultiple));
 </script>
 </body>
 </html>
