@@ -97,13 +97,13 @@
 
 <script>
   const checkboxes = document.querySelectorAll('.inbox input[type = "checkbox"]');
-  let endingItem;
+  let startingItem;
 
   function checkMultiple(e) {
     let middleItems = false;
     if (e.shiftKey && this.checked) {
       checkboxes.forEach(checkbox => {console.log(checkbox);
-        if (checkbox === this || checkbox === endingItem) {
+        if (checkbox === this || checkbox === startingItem) {
           console.log('not the automatic stuff');
           middleItems = !middleItems;
         }
@@ -113,7 +113,7 @@
         }
       });
     }  
-    endingItem = this;
+    startingItem = this;
   }
 
   checkboxes.forEach(checkbox => checkbox.addEventListener('click', checkMultiple));
